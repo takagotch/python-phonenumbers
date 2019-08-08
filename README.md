@@ -4,30 +4,30 @@ https://github.com/daviddrysdale/python-phonenumbers
 
 ```py
 import phonenumbers
-x = phonenumbers.parse("", None)
+x = phonenumbers.parse("+442083661177", None)
 print(x)
 type(x)
-y = phonenumbers.parse("", "GB")
+y = phonenumbers.parse("020 8366 1177", "GB")
 y = phonenumbers.parse("020 8366 1177", "GB")
 print(y)
 x == y
 z = phonenumbers.parse("00 1 650 253 2222", "GB")
 print(z)
 
-z = phonenumbers.parse("", None)
+z = phonenumbers.parse("00 1 650 253 2222",  None)
 print(z)
 phonenumbers.is_valid_number(z)
-z = phonnumbers.parse("", None)
+z = phonnumbers.parse("+120012301", None)
 print(z)
 phonenumbers.is_possible_number(z)
 phonenumbers.is_valid_number(z)
 
-z = phonenumbers.parse("", None)
-z = phonenumbers.parse("", None)
+z = phonenumbers.parse("+12001230101", None)
+z = phonenumbers.parse("02081234567", None)
 
-phonenumbers.format_number(x, PhoneNumberFormat.NATIONAL)
-phonenumbers.format_number()
-phonenumbers.format_number()
+phonenumbers.format_number(x, phonenumbers.PhoneNumberFormat.NATIONAL)
+phonenumbers.format_number(x, Phonenumbers.PhoneNumberFormat.INTERNATIONAL)
+phonenumbers.format_number(x, phonenumbers.PhoneNumberFormat.E164)
 
 formatter = phonenumbers.AsYouTypeFormatter("US")
 formatter.input_digit("6")
